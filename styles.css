@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #007bff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#loginBtn {
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#hamburger {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 200px;
+}
+
+.dropdown a {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown a:hover {
+  background: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-left, .hero-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.illustration {
+  height: 250px;
+  margin-right: 50px;
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.hero-right h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.hero-right p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.primary-btn {
+  padding: 12px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* SEARCH CARD */
+.search-card {
+  margin-top: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.search-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.datetime {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.datetime div {
+  flex: 1;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datetime {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+/* 🔐 MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  width: 850px;
+  max-width: 95%;
+  background: white;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+/* LEFT */
+.modal-left {
+  flex: 1;
+  padding: 30px;
+}
+
+.form {
+  display: none;
+  width: 100%;
+}
+
+.form.active {
+  display: block;
+}
+
+.form h2 {
+  margin-bottom: 10px;
+}
+
+.form p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.modal-right {
+  flex: 1;
+  background: linear-gradient(135deg, #007bff, #6a5acd);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden; /* IMPORTANT */
+
+}
+.modal-right::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+}
+
+.overlay-text h3 {
+  margin-bottom: 10px;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes scaleIn {
+  to {transform: scale(1);}
+}
+
+.input-group {
+  position: relative;
+  margin-top: 12px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* FORM OPTIONS ALIGNMENT */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* CUSTOM CHECKBOX */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  gap: 8px;
+}
+
+/* Hide default checkbox */
+.checkbox-container input {
+  display: none;
+}
+
+/* Custom box */
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Checked state */
+.checkbox-container input:checked + .checkmark {
+  background: #007bff;
+}
+
+/* Tick mark */
+.checkbox-container input:checked + .checkmark::after {
+  content: "✔";
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  left: 2px;
+  top: -1px;
+}
+
+/* Forgot password link */
+.forgot-link {
+  font-size: 14px;
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+/* SCENE */
+/* ROAD CONTAINER */
+.road-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+}
+
+/* ROAD */
+.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #2c2c2c;
+}
+
+/* ROAD DASHES */
+.road::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    to right,
+    white 0px,
+    white 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+@keyframes roadMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+
+/* CAR */
+.car {
+  position: absolute;
+  bottom: 6px;
+  left: -80px;
+  animation: driveCar 8s linear infinite;
+}
+
+/* CAR IMAGE */
+.car img {
+  width: 50px;
+  transform: scaleX(-1);
+}
+
+/* ANIMATION */
+@keyframes driveCar {
+  0% {
+    left: -80px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+.car {
+  animation: driveCar 8s linear infinite, bounce 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2px); }
+}
+
+.car img {
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4));
+}
