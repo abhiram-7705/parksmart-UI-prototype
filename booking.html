@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking - ParkSmart</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">ParkSmart</div>
+</header>
+<div class="booking-container">
+
+  <!-- LEFT (REUSED CARD) -->
+  <div class="left-panel">
+    <div id="bookingLeftCard"></div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-panel">
+
+    <h3>Reservation Summary</h3>
+
+    <div class="row">
+      <label>From</label>
+      <input id="fromTime" readonly>
+    </div>
+
+    <div class="row">
+      <label>To</label>
+      <input id="toTime" readonly>
+    </div>
+
+    <div class="row">
+      <label>Slots</label>
+      <input id="slots" readonly>
+    </div>
+
+    <div class="summary">
+      <p>Base rate <span id="baseRate"></span></p>
+      <p>Duration <span id="duration"></span></p>
+      <p>Subtotal <span id="subtotal"></span></p>
+
+      <div class="promo">
+        <input id="promoInput" placeholder="Promo code">
+        <button onclick="applyPromo()">Apply</button>
+      </div>
+
+      <p>Discount <span id="discount">₹0</span></p>
+      <p>Taxes (18%) <span id="tax"></span></p>
+
+      <h3>Total ₹<span id="total"></span></h3>
+    </div>
+
+    <div class="wallet">
+      Wallet Balance: ₹<span id="wallet"></span>
+    </div>
+
+    <button id="extendBtn" class="secondary-btn">
+      Extend Hold (+15 min)
+    </button>
+
+    <button id="bookBtn" class="primary-btn">
+      Book Now
+    </button>
+
+  </div>
+
+</div>
+
+<!-- MODAL FIRST -->
+<div id="confirmModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h3>Confirm Booking</h3>
+
+    <p id="confirmText"></p>
+
+    <div class="modal-actions">
+      <button id="cancelBtn" class="secondary-btn">Cancel</button>
+      <button id="confirmBtn" class="primary-btn">Confirm</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- ✅ SCRIPT LAST -->
+<script src="booking.js"></script>
+
+</body>
+</html>
+
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f6f8fb;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 16px 60px;
+  background: #fff;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* LAYOUT */
+.auth-wrapper {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT SIDE (visual) */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #2d6cdf, #5a8dee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 40px;
+}
+
+.auth-left-content {
+  max-width: 400px;
+}
+
+.auth-left h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.auth-left p {
+  opacity: 0.9;
+}
+
+/* RIGHT SIDE */
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.auth-card {
+  width: 380px;
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.auth-card:hover {
+  transform: translateY(-4px);
+}
+
+/* TITLE */
+.auth-card h2 {
+  margin-bottom: 25px;
+}
+
+/* FLOATING INPUT */
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  color: #999;
+  font-size: 13px;
+  transition: 0.2s;
+  pointer-events: none;
+  background: white;
+  padding: 0 5px;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -7px;
+  font-size: 11px;
+  color: #2d6cdf;
+}
+
+/* BUTTON */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2d6cdf;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.auth-btn:hover {
+  background: #1f54b8;
+}
+
+.auth-btn:active {
+  transform: scale(0.97);
+}
+
+/* SWITCH */
+.switch {
+  margin-top: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch a {
+  color: #2d6cdf;
+  text-decoration: none;
+  font-weight: 500;
+}

@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2b7cff;
+}
+
+/* LAYOUT */
+.booking-container {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 55%;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* FORM */
+.row {
+  margin-bottom: 10px;
+}
+
+.row input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* SUMMARY */
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.promo {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.wallet {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2b7cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ===== REUSED RESULT CARD STYLES ===== */
+.result-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.card-left h3 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.badge.public {
+  background: #e0f2fe;
+}
+
+.badge.private {
+  background: #f3e8ff;
+}
+
+.meta {
+  font-size: 13px;
+}
+
+.distance {
+  font-size: 13px;
+}
+
+.chip {
+  background: #eee;
+  padding: 3px 6px;
+  border-radius: 6px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.card-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.extra-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.extra-details.show {
+  display: block;
+}
+
+.map-container {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}

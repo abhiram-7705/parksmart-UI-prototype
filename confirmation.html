@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation - ParkSmart</title>
+  <link rel="stylesheet" href="confirmation.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">ParkSmart</div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#" class="restricted">Dashboard</a>
+  </nav>
+
+</header>
+
+<!-- MAIN -->
+<div class="confirmation-container">
+
+  <!-- PROCESSING -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loader"></div>
+    <h3>Processing Payment...</h3>
+    <p>Please do not refresh</p>
+  </div>
+
+  <!-- SUCCESS -->
+  <div id="successScreen" class="success-screen hidden">
+
+    <h2>✅ Booking Confirmed</h2>
+
+    <div id="bookingDetails" class="details"></div>
+
+    <p class="redirect-text">
+      Redirecting to dashboard in 
+      <span id="countdown">30</span>s
+    </p>
+
+    <a href="dashboard.html" class="primary-btn">
+      Go to Dashboard
+    </a>
+
+  </div>
+
+</div>
+
+<script src="confirmation.js"></script>
+</body>
+</html>

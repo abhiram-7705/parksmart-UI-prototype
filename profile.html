@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - ParkSmart</title>
+  <link rel="stylesheet" href="profile-styles.css">
+</head>
+<body>
+
+<!-- NAVBAR (same as your results page) -->
+<header class="navbar">
+  <div class="logo">ParkSmart</div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#" class="restricted">Rent Your Space</a>
+    <a href="#" class="restricted">Dashboard</a>
+  </nav>
+
+  <div class="profile-menu">
+    <div id="profileIcon" class="profile-icon">👤</div>
+    <div id="profileDropdown" class="profile-dropdown hidden">
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="profile-container">
+
+  <!-- LEFT: PROFILE CARD -->
+  <div class="profile-card">
+
+    <div class="profile-photo">
+      <img src="profile-image.webp" alt="Profile">
+    </div>
+
+    <h2 id="userName">User Name</h2>
+    <p id="userRole">Role</p>
+
+    <div class="user-details">
+      <div><span>Email:</span> <p id="userEmail"></p></div>
+      <div><span>Phone:</span> <p id="userPhone"></p></div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: WALLET -->
+  <div class="wallet-section">
+
+    <div class="wallet-card">
+      <h3>Wallet Balance</h3>
+      <div class="balance" id="walletBalance">₹0</div>
+
+      <button id="addBalanceBtn" class="primary-btn">
+        + Add Balance
+      </button>
+    </div>
+
+    <!-- TRANSACTIONS -->
+    <div class="transactions">
+
+      <div class="transactions-header" onclick="toggleTransactions()">
+        Wallet Transactions ▾
+      </div>
+
+      <div id="transactionsTable" class="transactions-table collapsed">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="transactionBody"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="balanceModal" class="modal-overlay">
+  <div class="modal-box">
+    <span id="closeModal" class="close-btn">&times;</span>
+    <h3>Feature not available</h3>
+    <p>Adding balance will be available soon.</p>
+  </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

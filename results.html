@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results - ParkSmart</title>
+  <link rel="stylesheet" href="results-styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">ParkSmart</div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#" class="restricted">Rent Your Space</a>
+    <a href="#" class="restricted">Dashboard</a>
+  </nav>
+
+  <div class="profile-menu">
+    <div id="profileIcon" class="profile-icon">👤</div>
+    <div id="profileDropdown" class="profile-dropdown hidden">
+      <div class="dropdown-item">Profile</div>
+      <div class="dropdown-item" id="logoutOption">Logout</div>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<div class="results-search">
+  <div class="search-field">
+    <label>Location</label>
+    <div class="input-box">
+      <input id="resLocation" type="text" placeholder="Search location">
+          <div id="locationDropdown" class="dropdown-list hidden"></div>
+    </div>
+
+  </div>
+
+  <div class="search-field">
+    <label>Arriving</label>
+    <input id="resArrival" type="datetime-local">
+  </div>
+
+  <div class="search-field">
+    <label>Leaving</label>
+    <input id="resLeaving" type="datetime-local">
+  </div>
+
+  <button class="primary-btn search-btn">Search</button>
+</div>
+
+<!-- MAIN -->
+<div class="results-container">
+
+  <!-- FILTERS -->
+  <div class="filters">
+
+    <div class="filters-header">
+      <h3>Filters</h3>
+      <span class="clear-btn">Clear</span>
+    </div>
+
+    <!-- TYPE -->
+    <div class="filter-section">
+      <div class="section-title" onclick="toggleSection(this)">Type ▾</div>
+      <div class="filter-content">
+        <label class="check-row"><input type="checkbox" id="filterPublic" checked> Public</label>
+        <label class="check-row"><input type="checkbox" id="filterPrivate" checked> Private</label>
+      </div>
+    </div>
+
+    <!-- PRICE -->
+    <div class="filter-section">
+      <div class="section-title" onclick="toggleSection(this)">Price ▾</div>
+      <div class="filter-content price-row">
+        <input id="minPrice" placeholder="Min">
+        <input id="maxPrice" placeholder="Max">
+      </div>
+    </div>
+
+    <!-- AMENITIES -->
+    <div class="filter-section">
+      <div class="section-title" onclick="toggleSection(this)">Amenities ▾</div>
+      <div class="filter-content">
+        <label class="check-row"><input type="checkbox" class="amenity" value="EV"> EV</label>
+        <label class="check-row"><input type="checkbox" class="amenity" value="Covered"> Covered</label>
+        <label class="check-row"><input type="checkbox" class="amenity" value="CCTV"> CCTV</label>
+        <label class="check-row"><input type="checkbox" class="amenity" value="Guarded"> Guarded</label>
+      </div>
+    </div>
+
+    <!-- DISTANCE -->
+    <div class="filter-section">
+      <div class="section-title" onclick="toggleSection(this)">Distance ▾</div>
+      <div class="filter-content distance-row">
+        <span>Radius</span>
+        <input type="range" id="distanceRange" min="1" max="10" value="5">
+        <span id="distanceValue">5 km</span>
+      </div>
+    </div>
+
+    <!-- SORT -->
+    <div class="filter-section">
+      <div class="section-title" onclick="toggleSection(this)">Sort ▾</div>
+      <div class="filter-content">
+        <select id="sortBy">
+          <option value="">None</option>
+          <option value="price">Price</option>
+          <option value="distance">Distance</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-list">
+    <h3 id="resultCount"></h3>
+    <div id="results"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="moreModal" class="modal-overlay">
+  <div class="modal-box">
+    <span id="closeMore" class="close-btn">&times;</span>
+    <div id="detailsTab"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Slot - ParkSmart</title>
+  <link rel="stylesheet" href="slot-selection.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <button onclick="goHome()" class="back-btn">← Return to Home</button>
+  <div id="timer" class="timer">⏱️ 05:00</div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- PARKING INFO -->
+  <div class="space-info">
+    <h2 id="spaceName"></h2>
+    <p id="spaceLocation"></p>
+    <p id="spaceDetails"></p>
+  </div>
+<!-- TIME SELECTION -->
+<!-- TIME SELECTION -->
+<div class="time-card">
+
+  <h3>Select Time</h3>
+
+  <div class="timeline-wrapper">
+
+    <div id="timeLabels" class="time-labels"></div>
+
+    <div class="timeline-bar">
+      <div id="selectedRange" class="selected-range"></div>
+
+      <input type="range" id="startRange" min="0" max="68" value="8">
+      <input type="range" id="endRange" min="0" max="68" value="12">
+    </div>
+
+  </div>
+
+  <div class="selected-time">
+    <div id="selectedTimeText"></div>
+    <div id="timeMeta" class="time-meta"></div>
+  </div>
+
+</div>
+  <!-- LEGEND -->
+  <div class="legend">
+    <div><span class="slot available"></span> Available</div>
+    <div><span class="slot selected"></span> Selected</div>
+    <div><span class="slot booked"></span> Booked</div>
+  </div>
+
+  <!-- SLOT GRID -->
+  <div id="slotsContainer" class="slots-container"></div>
+
+  <!-- FOOTER -->
+  <div class="bottom-bar">
+    <div id="selectedCount">0 slots selected</div>
+    <button id="proceedBtn" class="proceed-btn" disabled>
+      Proceed to Booking
+    </button>
+  </div>
+
+</div>
+
+<script src="slot-selection.js"></script>
+</body>
+</html>

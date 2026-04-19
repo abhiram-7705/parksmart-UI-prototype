@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2b7cff;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.profile-icon {
+  background: #2b7cff;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* LAYOUT */
+.profile-container {
+  display: flex;
+  gap: 30px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+/* PROFILE CARD */
+.profile-card {
+  width: 300px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.profile-photo img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.user-details div {
+  margin-bottom: 10px;
+}
+
+.user-details span {
+  font-weight: 600;
+}
+
+/* WALLET */
+.wallet-section {
+  flex: 1;
+}
+
+.wallet-card {
+  background: linear-gradient(135deg, #2b7cff, #5fa8ff);
+  color: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.balance {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+}
+
+/* BUTTON */
+.primary-btn {
+  background: white;
+  color: #2b7cff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TRANSACTIONS */
+.transactions {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.transactions-header {
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.transactions-table {
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.transactions-table.collapsed {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+}
+
+/* NAVBAR FIX */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2b7cff;
+}

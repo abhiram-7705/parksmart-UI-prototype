@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Host Dashboard</title>
+<link rel="stylesheet" href="host-dashboard.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">ParkSmart</div>
+
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#" class="restricted">Rent Your Space</a>
+    <a href="#" class="restricted">Dashboard</a>
+  </nav>
+
+  <div class="profile-menu">
+    <div id="profileIcon" class="profile-icon">👤</div>
+    <div id="profileDropdown" class="profile-dropdown hidden">
+    </div>
+  </div>
+</header>
+
+<div class="dashboard">
+  <div class="view-toggle">
+    <button class="active" onclick="showUser()">User Dashboard</button>
+    <button onclick="showOwner()">Owner Dashboard</button>
+  </div>
+  <div class="header-row">
+    <h2>My Spaces</h2>
+    <button class="primary" onclick="openAddSpace()">+ Add Space</button>
+  </div>
+
+  <div id="spaceList"></div>
+
+</div>
+
+<!-- MODAL -->
+<div id="overlay" class="overlay" onclick="closeModal()"></div>
+<div id="modal" class="modal"></div>
+
+<script src="host-dashboard.js"></script>
+</body>
+</html>
